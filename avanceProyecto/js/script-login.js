@@ -34,7 +34,10 @@ $(document).ready(function(){
             ok = false;
         }
 
-        if(ok) alert("Inicio de sesión correcto.");
+        if(ok){ 
+            alert("Inicio de sesión correcto.");
+            window.location.href = "Exito.html";
+        }
     });
 
     $("#btnAdmin").click(function(){
@@ -61,7 +64,11 @@ $(document).ready(function(){
             ok = false;
         }
 
-        if(ok) alert("Acceso administrador correcto.");
+        if(ok){
+            alert("Acceso administrador correcto.");
+            window.location.href = "Exito.html";
+        }
     });
+
 
 });
