@@ -1,0 +1,271 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.header-g {
+    width: 100%;
+
+    min-height: 700px;
+    background-image: url("../imgs/fondo-index.jpg"); 
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 50px;
+    box-sizing: border-box;
+    color: white;
+
+    position: relative;
+}
+
+@media (max-width: 992px) {
+    .header-g {
+        height: 60vh;
+    }
+    header{
+        display:block;
+    }
+
+    .header-g .titulo h1 {
+        font-size: 50px!important;
+    }
+
+    .header-grande .titulo p {
+        font-size: 10px!important;;
+    }
+
+    .header-g .logos img {
+        height: 150px;
+        margin: 0 20px;
+    }
+    .info-contenido{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 576px) {
+    .header-g {
+        
+        height: 60vh;
+    }
+     header{
+        display:block;
+    }
+
+    .header-g .titulo h1 {
+        font-size: 35px!important;;
+    }
+
+    .header-g .titulo p {
+        font-size: 16px!important;;
+    }
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;   
+
+    background-color: rgba(0, 0, 0, 0.6); /* transparencia */
+}
+.barra-logos {
+        overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+
+    background: rgba(148, 9, 212, 0.95);
+
+    display: flex;
+    align-items: center;
+     justify-content: space-between; 
+    gap: 40px;
+    z-index: 1000;
+}
+.logo-barra {
+    height: 65px;
+    margin:0  55px;
+}
+
+.header-g .logos,
+.header-g .titulo {
+    position: relative;
+    z-index: 1;
+}
+
+.header-g .titulo h1 {
+    font-size: 90px;
+    font-family: 'Playfair Display', serif; 
+    letter-spacing: 2px;
+     text-shadow: 
+        0 0 10px rgba(0,0,0,0.8),
+        0 0 20px rgba(0,0,0,0.6),
+        3px 3px 8px black;
+}
+.header-g .titulo p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+}
+
+.navbar {
+    overflow: hidden;
+
+    height: 50px;
+    width: 100%;
+    z-index: 999;
+}
+ .navbar-toggler {
+      border: 2px solid white;
+    }
+
+ .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+    }
+.offcanvas {
+    background: linear-gradient(180deg, #4b1a6f, #1f1b3a);
+    color: white;
+}
+.offcanvas .nav-link {
+    color: white !important;
+    font-size: 18px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+.offcanvas .nav-link:hover {
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding-left: 15px;
+}
+
+.offcanvas a {
+    color: white;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.offcanvas .nav-link:hover {
+    color: #d8b4fe !important;
+    transform: translateX(5px);   /* efecto pro */
+    transition: 0.3s;
+}
+
+  footer h5 {
+    margin-bottom: 15px;
+    color: #f8f9fa;
+  }
+
+  footer p, footer a {
+    font-size: 14px;
+  }
+
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+
+  .info-contrast { background: #f4f1fb; padding: 80px 8%; } 
+  .info-contenido { display: flex; align-items: center; gap: 60px; } /* TEXTO */ 
+  .info-texto { width: 50%; } 
+  .info-texto h2 { font-family: 'Playfair Display', serif; font-size: 42px; margin-bottom: 20px; color: #4b1a6f; } 
+  .info-texto p { font-family: 'Poppins', sans-serif; font-size: 18px; color: #333; line-height: 1.7; text-align: justify;} 
+  /* IMAGEN */ .info-imagen { width: 50%; text-align: right; } 
+  .info-imagen img { width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,.2); } 
+
+
+/* Contenedor del slider con fondo degradado */
+.slider-wrapper {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #4b1a6f, #1f1b3a);
+}
+
+/* Slider centrado con ancho limitado */
+.slider-contenedor {
+    width: 65%;
+    margin: 0 auto;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+/* Imagen de cada slide */
+.carousel-item img {
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+    max-height: 500px; /* limita altura sin cortar */
+}
+
+/* Zoom sutil al pasar el mouse */
+.carousel-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Fondo semitransparente de captions */
+.carousel-caption {
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 15px;
+    bottom: 20px;
+}
+
+.especificaciones {
+    background: #f4f1fb; /* fondo suave */
+    padding: 80px 8%;
+}
+.especificaciones h1{
+    font-family: 'Playfair Display', serif; font-size: 52px; margin-bottom: 20px; color: #4b1a6f;
+    text-align: center;
+}
+
+.tarjetas-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.tarjeta {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    padding: 30px 20px;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.tarjeta img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.tarjeta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #4b1a6f;
+}
+
+.tarjeta p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+.tarjeta:hover img {
+    content: url("../imgs/icono1-hover.webp"); }
+

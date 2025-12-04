@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Inscripción - COCENDI IPN</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/style-inscripcion.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/funciones.js"></script>
+<link rel="icon" type="image/png" href="imgs/logocapibara.PNG">
+
+</head>
+<body>
+
+<div class="barra-logos">
+   <a href="https://www.ipn.mx/" target="_blank"><img src="imgs/logo1.png" class="logo-barra"> </a> 
+   <a href="https://www.ipn.mx/cocendi/" target="_blank"><img src="imgs/logo3.png" class="logo-barra"></a> 
+</div>
+
+<header class="header-g">
+  <div class="overlay"></div>
+  <div class="logos">
+        <img src="imgs/padre-hijo.png" class="logo" height="250px">
+    </div>
+  <div class="titulo">
+    <h1>Inscripción</h1>
+    <p>Hijo y tutor</p>
+  </div>
+</header>
+
+<nav class="navbar" style="background:#51068f; position: sticky; top: 70px;">
+  <div class="container-fluid d-flex justify-content-end">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuLateral">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="offcanvas offcanvas-end text-bg-dark" id="menuLateral">
+  <div class="offcanvas-header">
+    <h5>Menú</h5>
+    <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="nav flex-column fs-5 text-center">
+      <li><a class="nav-link text-white" href="index.html">Inicio</a></li>
+      <li><a class="nav-link text-white" href="inscripcion.html">Inscripción</a></li>
+      <li><a class="nav-link text-white active" href="acceso.html">Acceso</a></li>
+      <li><a class="nav-link text-white" href="admin.html">Admin</a></li>
+      <li class="nav-item"><a class="nav-link text-white" href="#footer">Contacto</a></li>
+    </ul>
+  </div>
+</div>
+
+<div class="contenedorFormulario">
+    <section class="container Registro">
+        <div class="row">
+            <div class="col-1"><span></span></div>
+            <div class="col-10 Formulario py-5 border-5 rounded-3">
+                <h1 class="text-center my-3" style="color: rgb(80, 0, 117);">Datos del niño</h1>
+                <hr>
+                <form action="Exito.html" method="post" onsubmit="return Comprobar()">
+                    <div class="row mb-md-4">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Nombre">Nombre: </label>
+                            <input type="text" class="form-control" id="nombre" name="Nombre" required />
+                            <label id="errornom" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta letras</label>
+                            <label id="errornom2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el nombre debe de contener más de 2 letras</label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="ApellidoP">Apellido Paterno: </label>
+                            <input type="text" class="form-control" id="apellip" name="ApellidoP" required />
+                            <label id="errorapp" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta letras</label>
+                            <label id="errorapp2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el Apellido debe contener más de 2 caracteres</label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label asp-for="ApellidoM">Apellido Materno: </label>
+                            <input type="text" name="ApellidoM" class="form-control" id="apellim" required />
+                            <label id="errorapm" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta letras</label>
+                            <label id="errorapm2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el Apellido debe contener más de 2 letras</label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-md-4 my-5 justify-content-center">
+                        <div class="col-md-5 d-flex flex-column text-center justify-content-center mb-3 mb-md-0 position-relative pb-4">
+                            <label for="CENDI" class="form-label">CENDI al que se inscribe</label>
+                            <select class="form-select" aria-label="Default select example" name="CENDI" id="CENDI">
+                                <option value="0" selected>Elige una opción</option>
+                                <option value="1">CENDI "Amalia Solórzano de Cárdenas"</option>
+                                <option value="2">CENDI "Clementina Batalla de Bassols"</option>
+                                <option value="3">CENDI "Eva Sámano de López Mateos"</option>
+                                <option value="4">CENDI “Laura Pérez de Bátiz”</option>
+                                <option value="5">CENDI "Margarita Salazar de Erro"</option>
+                            </select>
+                            <label id="errorcendi" class="position-absolute bottom-0 w-100 text-danger" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Ingresa un dato
+                            </label>
+                        </div>
+
+                        <div class="col-md-5 d-flex my-3 flex-column text-center justify-content-center position-relative pb-4">
+                            <label for="gruposel" class="form-label">Grupo</label>
+                            <select class="form-select" aria-label="Default select example" name="Grupo" id="gruposel">
+                                <option value="0" selected>Elige una opción</option>
+                                <option value="1">Lactantes I -II</option>
+                                <option value="2">Maternal I</option>
+                                <option value="3">Preescolar I</option>
+                                <option value="4">Preescolar II</option>
+                                <option value="5">Preescolar III</option>
+                            </select>
+                            <label id="errorgrupo" class="position-absolute bottom-0 w-100 text-danger" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Error debe seleccionar al menos una opción
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-md-4">
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                        <div class="col-md-10 d-flex flex-column text-center justify-content-center position-relative pb-4">
+                            <label for="Fecha_nac">Fecha de Nacimiento</label>
+                            <input type="Date" name="Fecha_nac" id="fechanac" max="" class="form-control">
+                            <label id="ErrorfechanacF1" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error no se puede poner una fecha del futuro</label>
+                            <label id="ErrorfechanacF2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> El niño puede tener maximo 6 años de edad</label>
+                        </div>
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                    </div>
+
+                    <div class="row mb-md-4">
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                        <div class="col-md-10 d-flex flex-column text-center justify-content-center position-relative pb-4">
+                            <label for="LNacimiento">Lugar de Nacimiento: </label>
+                            <input type="text" name="LNacimiento" class="form-control" id="lnaci" required />
+                        </div>
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                    </div>
+
+                    <div class="row m-md-2">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Sangre">Grupo Sanguineo </label>
+                            <input type="text" name="Sangre" class="form-control" id="tsangre" required />
+                            <label id="Errortipo" class="position-absolute bottom-0 w-100 text-danger" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Valores admitidos: A//B/O/AB
+                            </label>
+                        </div>
+
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="RH">RH: </label>
+                            <input type="text" id="rh" name="RH" class="form-control" required />
+                            <label id="Errorrh" class="position-absolute bottom-0 w-100 text-danger" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Valores admitidos: +/-
+                            </label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Curp">Curp:</label>
+                            <input type="text" name="Curp" id="curp" class="form-control" required />
+                            <label id="Errorcurp1" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el formato del curp no es valido</label>
+                            <label id="Errorcurp2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el curp debe contener los 18 caracteres</label>
+                        </div>
+                    </div>
+
+                    <h3 class="h3 text-center my-4" style="color: rgba(148, 9, 212, 0.95)">Domicilio</h3>
+                    <hr>
+
+                    <div class="row m-md-2">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Entidad">Entidad Federativa:</label>
+                            <select class="form-select" aria-label="Default select example" name="Entidad" id="estado" onchange="comprobarest()">
+                                <option selected value="0">Elige una opción</option>
+                                <option value="1">Aguascalientes</option>
+                                <option value="2">Baja Califonia Norte</option>
+                                <option value="3">Baja California Sur</option>
+                                <option value="4">Campeche</option>
+                                <option value="5">Chiapas</option>
+                                <option value="6">Chihuahua</option>
+                                <option value="7">Ciudad de México</option>
+                                <option value="8">Coahuila</option>
+                                <option value="9">Colima</option>
+                                <option value="10">Durango</option>
+                                <option value="11">Estado de México</option>
+                                <option value="12">Guanajuato</option>
+                                <option value="13">Guerrero</option>
+                                <option value="14">Hidalgo</option>
+                                <option value="15">Jalisco</option>
+                                <option value="16">Michoacán</option>
+                                <option value="17">Morelos</option>
+                                <option value="18">Nayarit</option>
+                                <option value="19">Nuevo León</option>
+                                <option value="20">Oaxaca</option>
+                                <option value="21">Puebla</option>
+                                <option value="22">Querétaro</option>
+                                <option value="23">Quintana roo</option>
+                                <option value="24">San Luis Potosí</option>
+                                <option value="25">Sinaloa</option>
+                                <option value="26">Sonora</option>
+                                <option value="27">Tabasco</option>
+                                <option value="28">Tamaulipas</option>
+                                <option value="29">Tlaxcala</option>
+                                <option value="30">Veracruz</option>
+                                <option value="31">Yucatán</option>
+                                <option value="32">Zacatecas</option>
+                            </select>
+                            <label id="errorestados" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error debe seleccionar al menos una opción</label>
+                        </div>
+                        <div class="col-md-8 position-relative pb-4" id="Entidad1">
+                            <label for="Delegaciones">Delegaciones: </label>
+                            <select class="form-select" aria-label="Default select example" name="Delegaciones" id="delegacion">
+                                <option selected>Elige una opción</option>
+                                <option value="1">Álvaro Obregón</option>
+                                <option value="2">Azcapotzalco</option>
+                                <option value="3">Benito Juárez</option>
+                                <option value="4">Coyoacán</option>
+                                <option value="5">CuajiMalpa de Morelos</option>
+                                <option value="6">Cuauhtémoc</option>
+                                <option value="7">Gustavo A. Madero</option>
+                                <option value="8">Iztacalco</option>
+                                <option value="9">Iztapalapa</option>
+                                <option value="10">Magdalena Contreras</option>
+                                <option value="11">Miguel Hidalgo</option>
+                                <option value="12">Milpa Alta</option>
+                                <option value="13">Tláhuac</option>
+                                <option value="14">Tlalpan</option>
+                                <option value="15">Venustiano Carranza</option>
+                                <option value="16">Xochimilco</option>
+                                <option value="16">Michoacán</option>
+                            </select>
+                            <label id="errordeleg" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error debe seleccionar al menos una opción</label>
+                        </div>
+                        <div class="col-md-8 position-relative pb-4" id="Entidad2">
+                            <label for="EntidadTxt">Entidad Federativa:</label>
+                            <input type="text" name="EntidadTxt" class="form-control" id="entidadext" required />
+                        </div>
+                    </div>
+
+                    <div class="row m-md-2">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="CP">Código postal</label>
+                            <input type="text" name="CP" id="CP" class="form-control" required />
+                            <label id="Errorcp" class="position-absolute bottom-0 w-100 text-danger" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Ingresa un código postal válido
+                            </label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Calle">Calle:</label>
+                            <input type="text" name="Calle" class="form-control" required />
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Numero_Cel">Número Celular: </label>
+                            <input type="text" name="Numero_Cel" class="form-control" id="telefono" required />
+                            <label id="errortel" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta numeros</label>
+                        </div>
+                    </div>
+
+                    <h1 class="my-4" style="text-align: center; color: rgb(80, 0, 117);">Datos del Empleado</h1>
+                    <hr>
+
+                    <div class="row mb-md-4">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="NombreE">Nombre: </label>
+                            <input type="text" class="form-control" id="nombreE" name="NombreE" required />
+                            <label id="errornomE" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta letras</label>
+                            <label id="errornomE2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el nombre debe de contener más de 2 letras</label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="ApellidoPE">Apellido Paterno: </label>
+                            <input type="text" class="form-control" id="apellipE" name="ApellidoPE" required />
+                            <label id="errorappE" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta letras</label>
+                            <label id="errorappE2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el Apellido debe contener más de 2 caracteres</label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="ApellidoM">Apellido Materno: </label>
+                            <input type="text" name="ApellidoM" class="form-control" id="apellimE" required />
+                            <label id="errorapmE" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta letras</label>
+                            <label id="errorapmE2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el Apellido debe contener más de 2 letras</label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-md-4 justify-content-center align-items-center">
+                        <div class="col-md-5 d-flex flex-column text-center justify-content-center position-relative pb-4">
+                            <label for="Fecha_nacE" class="form-label">Fecha de Nacimiento</label>
+                            <input type="date" name="Fecha_nacE" id="fechanacE" class="form-control">
+
+                            <label id="ErrorfechanacFE1" class="position-absolute bottom-0 w-100 text-danger small mt-1">
+                                <i class="bi bi-exclamation-triangle"></i> Error no se puede poner una fecha del futuro <br>
+                            </label>
+                            <label id="ErrorfechanacFE2" class="position-absolute bottom-0 w-100 text-danger small">
+                                <i class="bi bi-exclamation-triangle"></i> El trabajador debe tener por lo menos 18 años de edad
+                            </label>
+                        </div>
+
+                        <div class="col-md-5 d-flex flex-column text-center justify-content-center mt-3 mt-md-0 position-relative pb-4">
+                            <label for="genero" class="form-label">Género:</label>
+                            <select name="genero" id="genero" class="form-select">
+                                <option value="" disabled selected>-- Selecciona una opción --</option>
+                                <option value="hombre">Hombre</option>
+                                <option value="mujer">Mujer</option>
+                            </select>
+                            <label id="errorgenero" class="position-absolute bottom-0 w-100 text-danger" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Debes seleccionar un género
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-md-4">
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                        <div class="col-md-10 d-flex flex-column text-center justify-content-center position-relative pb-4">
+                            <label for="LNacimiento">Lugar de Nacimiento: </label>
+                            <input type="text" name="LNacimiento" class="form-control" id="lnacie" required />
+                        </div>
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                    </div>
+
+                    <div class="row mb-md-4">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="CurpE">Curp: </label>
+                            <input type="text" class="form-control" id="curpE" name="CurpE" required />
+                            <label id="Errorcurpe1" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error formato de curp incorrecto</label>
+                            <label id="Errorcurpe2" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error el curp debe contener los 18 caracteres</label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="CorreoI">Correo Institucional: </label>
+                            <input type="email" class="form-control" id="correoi" name="CorreoI" required />
+                            <label id="Errorcorreoi" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error esté no es un correo institucional</label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label asp-for="CorreoP">Correo Personal: </label>
+                            <input type="email" name="CorreoP" class="form-control" id="correop" required />
+                        </div>
+                    </div>
+
+                    <div class="row mb-md-4">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="EstadoC">Estado Civil: </label>
+                            <select class="form-select" aria-label="Default select example" name="EstadoC" id="estadoC">
+                                <option value="0" selected>Elige una opción</option>
+                                <option value="1">Casado</option>
+                                <option value="2">Soltero</option>
+                                <option value="3">Unión Libre</option>
+                            </select>
+                            <label id="Errorestadoc" class="position-absolute bottom-0 w-100 text-danger small mt-1" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Error selecciona una opción
+                            </label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Ocup">Ocupación</label>
+                            <select class="form-select" aria-label="Default select example" name="Ocup" id="ocupac">
+                                <option value="0" selected>Elige una opción</option>
+                                <option value="1">Docente</option>
+                                <option value="2">Trabajador PAAE</option>
+                            </select>
+                            <label id="Errorocupa" class="position-absolute bottom-0 w-100 text-danger small mt-1" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Error selecciona una opción
+                            </label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="numeroE">Número de Empleado: </label>
+                            <input type="text" name="numeroE" class="form-control" id="numeroemp" required />
+                            <label id="errornumE" class="position-absolute bottom-0 w-100 text-danger" style="font-size: 0.8rem;"><i class="bi bi-exclamation-triangle"></i> Error este campo solo acepta numeros</label>
+                        </div>
+                    </div>
+
+                    <div class="row mb-md-4">
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="Escolar">Escolaridad: </label>
+                            <select class="form-select" aria-label="Default select example" name="Escolar" id="escolaridad">
+                                <option value="0" selected>Elige una opción</option>
+                                <option value="1">Escolarizada</option>
+                                <option value="2">No Escolarizada</option>
+                                <option value="3">Mixta</option>
+                            </select>
+                            <label id="Errorescolar" class="position-absolute bottom-0 w-100 text-danger small mt-1" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Error selecciona una opción
+                            </label>
+                        </div>
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="HoraE">Horario Entrada</label>
+                            <input type="text" name="HoraE" class="form-control" id="horaE" placeholder="HH:MM" required>
+                            <label id="ErrorhoraFormato" class="position-absolute bottom-0 w-100 text-danger small mt-1" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Error el formato de lo hora o salida no es correcto
+                            </label>
+                        </div>
+
+                        <div class="col-md-4 d-flex flex-column position-relative pb-4">
+                            <label for="HoraS">Hora Salida </label>
+                            <input type="text" name="HoraS" class="form-control" id="horaS" placeholder="HH:MM" required />
+                            <label id="ErrorhoraDiff" class="position-absolute bottom-0 w-100 text-danger small mt-1" style="display:none; font-size: 0.8rem;">
+                                <i class="bi bi-exclamation-triangle"></i> Error el horario debe ser de minimo 1 hora y maximo 10 horas
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row mb-md-4">
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                        <div class="col-md-10 d-flex flex-column text-center justify-content-center position-relative pb-4">
+                            <label for="adscrip">Adscripción </label>
+                            <input type="text" name="adscrip" class="form-control" id="adscripci" required />
+                        </div>
+                        <div class="d-none d-md-block col-md-1"><span></span></div>
+                    </div>
+
+                    <div class="text-center my-4">
+                        <button type="submit" class="btn btn-success w-25">Registrarse</button>
+                    </div>
+                </form>
+
+                <div class="text-center my-4">
+                    <a href="index.html">
+                    <button type="submit" class="btn btn-light w-25" > Regresar</button></a>
+                </div>
+
+                <div class="text-center my-4">
+                    <button type="submit" class="btn btn-primary w-25" onclick="limpiar()">Limpiar</button>
+                </div>
+
+            </div>
+            <div class="col-1"><span></span></div>
+        </div>
+    </section>
+</div>
+
+
+<footer class="bg-dark text-light pt-5 pb-3 mt-5" id="footer">
+  <div class="container">
+
+    <div class="row">
+
+      <!-- COLUMNA 1 -->
+      <div class="col-md-4 mb-4">
+        <h5>INSTITUTO POLITÉCNICO NACIONAL</h5>
+        <p>
+        
+            D.R. Instituto Politécnico Nacional (IPN). Av. Luis Enrique Erro S/N, Unidad Profesional Adolfo López Mateos, Zacatenco, Alcaldía Gustavo A. Madero, C.P. 07738, Ciudad de México. Conmutador: 55 57 29 60 00 / 55 57 29 63 00.
+
+            Esta página es una obra intelectual protegida por la Ley Federal del Derecho de Autor, puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica; su uso para otros fines, requiere autorización previa y por escrito de la Dirección General del Instituto.
+        </p>
+        <a href="https://www.ipn.mx/" target="_blank"><img src="imgs/logo1.png" height="60"></a> 
+      </div>
+
+      <!-- COLUMNA 2 -->
+      <div class="col-md-4 mb-4">
+        <h5>Enlaces rápidos</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Inicio</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Inscripción</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Acceso y Admin</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <h5>Contacto</h5>
+        <p>📍 Ciudad de Mexico, Mexico D.R. Instituto Politécnico Nacional (IPN). Av. Luis Enrique Erro S/N, Unidad Profesional Adolfo López Mateos, Zacatenco, Alcaldía Gustavo A. Madero, C.P. 07738</p>
+        <p>📞 55 57 29 60 00 / 55 57 29 63 00.</p>
+        <p>📧 Coordinación de Centros de Desarrollo Infantil: ybarzalobrev@ipn.mx</p>
+
+        <div>
+          <a href="https://www.facebook.com/people/IPN-Coordinaci%C3%B3n-de-Centros-de-Desarrollo-Infantil/61557425487657/" class="text-light me-3" target="_blank">Facebook</a>
+          <a href="https://www.tiktok.com/@ipn_cocendi?_t=8rktjEoWrY7&_r=1" class="text-light me-3" target="_blank">TikTok</a>
+          <a href="https://www.youtube.com/@cocendiipn4262" class="text-light" target="_blank">Youtube</a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="border-secondary">
+
+    <div class="text-center">
+      © 2025 - Todos los derechos reservados 
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
